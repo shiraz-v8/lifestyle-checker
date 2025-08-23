@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/lifestyle-checker/static/css/main.03c73236.css",
-    "main.js": "/lifestyle-checker/static/js/main.3e13015e.js",
+    "main.js": "/lifestyle-checker/static/js/main.f6e613b6.js",
     "static/js/453.49f187bf.chunk.js": "/lifestyle-checker/static/js/453.49f187bf.chunk.js",
     "static/media/BCP.ttf": "/lifestyle-checker/static/media/BCP.f727b537f5161e8d1785.ttf",
     "index.html": "/lifestyle-checker/index.html",
     "main.03c73236.css.map": "/lifestyle-checker/static/css/main.03c73236.css.map",
-    "main.3e13015e.js.map": "/lifestyle-checker/static/js/main.3e13015e.js.map",
+    "main.f6e613b6.js.map": "/lifestyle-checker/static/js/main.f6e613b6.js.map",
     "453.49f187bf.chunk.js.map": "/lifestyle-checker/static/js/453.49f187bf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.03c73236.css",
-    "static/js/main.3e13015e.js"
+    "static/js/main.f6e613b6.js"
   ]
 }
