@@ -74,15 +74,15 @@ def get_patient(patient_id: str, surname: str, dob: str):
         raise HTTPException(
             status_code=400, detail="Invalid date format, expected YYYY-MM-DD")
 
+    age = calculate_age(api_dob)
+    if age < 16:
+        return underage()
+
     if surname and surname.strip().lower() != api_surname:
         return details_mismatch()
 
     if uk_date_format != api_dob:
         return details_mismatch()
-
-    age = calculate_age(api_dob)  # safe now
-    if age < 16:
-        return underage()
 
     return {
         "status": "success",
