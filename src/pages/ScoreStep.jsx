@@ -2,11 +2,6 @@ import { useEffect, useState } from "react";
 import getScore from "../api/get-score";
 import Spinner from "../styles/atoms/Spinner";
 
-const MESSAGES = {
-  good: "Thank you for answering our questions, we don't need to see you at this time. Keep up the good work!",
-  bad: "We think there are some simple things you could do to improve your quality of life, please phone to book an appointment.",
-};
-
 const ScoreStep = ({ journeyData }) => {
   const [score, setScore] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -37,7 +32,7 @@ const ScoreStep = ({ journeyData }) => {
   return (
     <div className="flex flex-col items-center gap-4">
       <h3 className="mb-6">Here's your score</h3>
-      <p className="mb-4">You have scored {score.score} out of 9</p>
+      <p className="mb-4">You have scored {score.score}</p>
       <h2 className="mb-4">{score.outcome}</h2>
 
       {score.score <= 3 ? (
@@ -72,9 +67,7 @@ const ScoreStep = ({ journeyData }) => {
         </svg>
       )}
 
-      <p className="text-center">
-        {score.score <= 3 ? MESSAGES.good : MESSAGES.bad}
-      </p>
+      <p className="text-center">{score.message}</p>
     </div>
   );
 };

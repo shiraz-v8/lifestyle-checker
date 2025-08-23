@@ -18,7 +18,7 @@ const getScore = async (journeyData) => {
     redirect: "follow",
   };
 
-  return await fetch("http://localhost:5005/get-score/", requestOptions)
+  return await fetch("http://localhost:5005/score/calculate", requestOptions)
     .then((response) => response.json())
     .then((result) => {
       return result;
