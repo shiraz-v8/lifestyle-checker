@@ -37,7 +37,7 @@ const JourneyWizard = () => {
   const [patient, setPatient] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
   const [journeyData, setJourneyData] = useState({
-    ref: 222333444,
+    ref: null,
     surname: null,
     dob: null,
     drinking: null,
