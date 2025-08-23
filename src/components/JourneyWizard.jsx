@@ -11,8 +11,10 @@ import SmokingStep from "../pages/SmokingStep";
 import ExcerciseStep from "../pages/ExcerciseStep";
 import ScoreStep from "../pages/ScoreStep";
 import StepWrapper from "./StepWrapper";
+import WelcomeStep from "../pages/WelcomeStep";
 
 const steps = [
+  WelcomeStep,
   ReferenceStep,
   NameStep,
   DOBStep,

@@ -37,13 +37,13 @@ const StepWrapper = ({
 
     setmalformedData(isMalformed);
 
-    if (currentStep === 2 && !isMalformed) {
+    if (currentStep === 3 && !isMalformed) {
       setLoading(true);
       const result = await getPatient(journeyData);
       setPatient(result);
       setTimeout(() => {
         setLoading(false);
-        setCurrentStep(3);
+        setCurrentStep(4);
       }, 2000);
     }
   }, [journeyData, currentStep, setCurrentStep, setPatient]);
@@ -51,17 +51,19 @@ const StepWrapper = ({
   const isStepValid = useMemo(() => {
     switch (currentStep) {
       case 0:
-        return journeyData.ref !== null;
-      case 1:
-        return journeyData.surname !== null;
-      case 2:
         return true;
-      case 4:
-        return journeyData.drinking !== null;
+      case 1:
+        return journeyData.ref !== null && journeyData.ref !== "";
+      case 2:
+        return journeyData.surname !== null && journeyData.surname !== "";
+      case 3:
+        return journeyData.dob !== null && journeyData.dob !== "";
       case 5:
-        return journeyData.smoking !== null;
+        return journeyData.drinking !== null;
       case 6:
-        return journeyData.excersing !== null;
+        return journeyData.smoking !== null;
+      case 7:
+        return journeyData.exercising !== null;
       default:
         return true;
     }
@@ -69,8 +71,7 @@ const StepWrapper = ({
 
   return (
     <div className="flex flex-col items-center gap-4">
-      {/* <h1>Step {currentStep}</h1> */}
-
+      {/* Back button */}
       <div className="self-start h-[44px] flex items-center">
         {currentStep > 0 && (
           <Button variant="secondary" onClick={prevStep}>
@@ -95,7 +96,7 @@ const StepWrapper = ({
         {React.Children.map(children, (child) => {
           if (!React.isValidElement(child)) return child;
 
-          if (currentStep === 3 && patient) {
+          if (currentStep === 4 && patient) {
             return React.cloneElement(child, {
               result: patient,
               continueCTA: continueStep,
@@ -105,14 +106,17 @@ const StepWrapper = ({
         })}
       </StepComponent>
 
+      {/*Continue button - 0 to 2 continue steps. 3 submit step, onwards continue */}
+
       <div className="mt-4 flex gap-2">
-        {(currentStep <= 1 || currentStep >= 4) && currentStep !== 7 && (
+        {(currentStep >= 0 && currentStep <= 2) ||
+        (currentStep > 4 && currentStep <= 7) ? (
           <Button disabled={!isStepValid} onClick={continueStep}>
             Continue
           </Button>
-        )}
+        ) : null}
 
-        {currentStep === 7 && (
+        {currentStep === 8 && (
           <Button
             disabled={!isStepValid}
             onClick={() =>
@@ -126,7 +130,7 @@ const StepWrapper = ({
           </Button>
         )}
 
-        {currentStep === 2 && (
+        {currentStep === 3 && (
           <Button disabled={loading} onClick={handleSubmit}>
             {loading ? <Spinner /> : "Submit"}
           </Button>

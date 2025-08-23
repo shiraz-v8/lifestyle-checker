@@ -1,5 +1,11 @@
 export const PAGE_CONTENT = {
   steps: {
+    WelcomeStep: {
+      heading: "Welcome to Lifestyle Checker",
+      description:
+        "This web app helps you visualize and track your lifestyle data. " +
+        "Answer a few simple questions to get started and see personalized insights.",
+    },
     ReferenceStep: { question: "Enter your NHS number" },
     NameStep: { question: "Enter your surname" },
     DOBStep: { question: "Enter your Date of Birth" },
