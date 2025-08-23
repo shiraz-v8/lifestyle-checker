@@ -1,9 +1,14 @@
+import { PAGE_CONTENT } from "../content/page-content";
 import { Input } from "../styles/atoms/Input";
+
+const {
+  steps: { DOBStep: content },
+} = PAGE_CONTENT;
 
 const DOBStep = ({ journeyData, onDataChange }) => {
   return (
     <div>
-      <h3 className="mb-6">Enter your Date of Birth</h3>
+      <h3 className="mb-6">{content.question}</h3>
       <Input
         type="date"
         value={journeyData.dob || ""}

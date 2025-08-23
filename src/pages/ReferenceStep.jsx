@@ -1,9 +1,14 @@
+import { PAGE_CONTENT } from "../content/page-content";
 import { Input } from "../styles/atoms/Input";
+
+const {
+  steps: { ReferenceStep: content },
+} = PAGE_CONTENT;
 
 const ReferenceStep = ({ journeyData, onDataChange }) => {
   return (
     <>
-      <h3 className="mb-6">Enter your NHS number</h3>
+      <h3 className="mb-6">{content.question}</h3>
       <Input
         type="text"
         value={journeyData.ref}

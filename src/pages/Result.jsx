@@ -1,12 +1,15 @@
+import { PAGE_CONTENT } from "../content/page-content";
 import Button from "../styles/atoms/Button";
+
+const {
+  steps: { Result: content },
+} = PAGE_CONTENT;
 
 const Result = ({ result, continueCTA }) => {
   const { error = false, message } = result;
   return (
     <div className="flex flex-col items-center gap-4">
-      <h3 className="mb-6">
-        {error ? "Sorry!" : "Let's explore your lifestyle"}
-      </h3>
+      <h3 className="mb-6">{error ? content.stop : content.proceed}</h3>
       {!error ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +44,7 @@ const Result = ({ result, continueCTA }) => {
       {message && <p>{message}</p>}
       {!error && (
         <Button className="mt-4 w-auto" onClick={continueCTA}>
-          Continue
+          {content.cta}
         </Button>
       )}
       <br />
@@ -50,10 +53,3 @@ const Result = ({ result, continueCTA }) => {
 };
 
 export default Result;
-
-// There are 4 possible outcomes
-
-// Patient cannot be found - user is shown "Your details could not be found" message
-// Patient found, but details do not match - user is shown "Your details could not be found" message
-// Patient found, details match but they are under 16 years old - user is shown a message "You are not eligble for this service"
-// Patient found and details match - user progresses to part 2

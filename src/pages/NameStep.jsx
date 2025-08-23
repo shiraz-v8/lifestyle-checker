@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Input } from "../styles/atoms/Input";
+import { PAGE_CONTENT } from "../content/page-content";
+
+const {
+  steps: { NameStep: content },
+} = PAGE_CONTENT;
 
 const NameStep = ({ journeyData, onDataChange }) => {
-  const [name, setname] = useState("");
   return (
     <>
-      <h3 className="mb-6">Enter your surname</h3>
+      <h3 className="mb-6">{content.question}</h3>
       <Input
         type="text"
         value={journeyData.surname}

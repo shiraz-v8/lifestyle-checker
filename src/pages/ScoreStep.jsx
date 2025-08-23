@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import getScore from "../api/get-score";
 import Spinner from "../styles/atoms/Spinner";
+import { PAGE_CONTENT } from "../content/page-content";
+
+const {
+  steps: { ScoreStep: content },
+} = PAGE_CONTENT;
 
 const ScoreStep = ({ journeyData }) => {
   const [score, setScore] = useState(null);
@@ -8,14 +13,15 @@ const ScoreStep = ({ journeyData }) => {
 
   useEffect(() => {
     const fetchScore = async () => {
-      setLoading(true);
       try {
         const result = await getScore(journeyData);
         setScore(result);
       } catch (err) {
         console.error("Error fetching score:", err);
       } finally {
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, 2000);
       }
     };
 
@@ -24,17 +30,17 @@ const ScoreStep = ({ journeyData }) => {
 
   if (loading)
     return (
-      <div className="m-6">
-        <Spinner />
+      <div className="flex flex-col items-center gap-4">
+        <h3 className="mb-6">{content.loadingText}</h3>
+        <Spinner color="black" />
       </div>
     );
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <h3 className="mb-6">Here's your score</h3>
-      <p className="mb-4">You have scored {score.score}</p>
+      <h3 className="mb-6">{content.tile}</h3>
+      <p className="mb-4"> {content.subHeading + score.score}</p>
       <h2 className="mb-4">{score.outcome}</h2>
-
       {score.score <= 3 ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +72,6 @@ const ScoreStep = ({ journeyData }) => {
           />
         </svg>
       )}
-
       <p className="text-center">{score.message}</p>
     </div>
   );

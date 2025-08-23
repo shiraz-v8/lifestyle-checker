@@ -1,6 +1,18 @@
-const Spinner = () => {
+import React from "react";
+
+const Spinner = ({ color = "#ffffff", size = 16 }) => {
+  const style = {
+    borderColor: color,
+    borderTopColor: "transparent",
+    width: size,
+    height: size,
+  };
+
   return (
-    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mx-auto"></div>
+    <div
+      style={style}
+      className="border-2 rounded-full animate-spin mx-auto"
+    ></div>
   );
 };
 
