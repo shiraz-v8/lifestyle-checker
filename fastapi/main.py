@@ -8,7 +8,8 @@ from get_patient import patient
 app = FastAPI()
 
 
-origins = ["http://localhost:3000", "http://127.0.0.1:5005"]
+origins = ["http://localhost:3000",
+           "http://127.0.0.1:5005", "https://shiraz-v8.github.io"]
 
 app.add_middleware(
     CORSMiddleware,
