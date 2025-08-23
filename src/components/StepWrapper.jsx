@@ -106,9 +106,23 @@ const StepWrapper = ({
       </StepComponent>
 
       <div className="mt-4 flex gap-2">
-        {(currentStep <= 1 || currentStep >= 4) && (
+        {(currentStep <= 1 || currentStep >= 4) && currentStep !== 7 && (
           <Button disabled={!isStepValid} onClick={continueStep}>
             Continue
+          </Button>
+        )}
+
+        {currentStep === 7 && (
+          <Button
+            disabled={!isStepValid}
+            onClick={() =>
+              window.open(
+                "https://github.com/shiraz-v8/lifestyle-checker",
+                "_blank"
+              )
+            }
+          >
+            Read more
           </Button>
         )}
 
