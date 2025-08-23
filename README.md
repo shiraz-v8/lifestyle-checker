@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Lifestyle Checker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application for tracking and analyzing lifestyle habits with FastAPI backend.
 
-## Available Scripts
+## 🚀 Demo
 
-In the project directory, you can run:
+[Frontend Demo GH Pages](https://shiraz-v8.github.io/lifestyle-checker/)
 
-### `npm start`
+## 📋 Documentation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Planning & Brainstorming](./docs/planning-brainstorm.md)
+- [Dynamic Scoring System - Notion API](https://www.notion.so/spiralz/lifestyle-checker-2589fe8b1f7c80bfb96eee1bbf7bbe25) (Step 3 - Notion Scoring Page)
+- [FastAPI Documention](http://localhost:5005/docs) (OpenAPI Endpoint docs)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏃‍♂️ Quick Start
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+cd lifestyle-checker
+npm i
+npm start
+```
 
-### `npm run build`
+Open [http://localhost:3000](http://localhost:3000)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd fastapi
+source venv/bin/activate
+pip install -r requirements.txt
+python3 main.py
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_Note: Backend is not deployed_
 
-### `npm run eject`
+## 📦 Available Scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `npm start` - Development server
+- `npm test` - Run tests
+- `npm run build` - Production build
+- `npm run lint:js` - Lint JavaScript files
+- `npm run eject` - Eject configuration (irreversible)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Web App is built With
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- React (Create React App)
+- Framer Motion (User journeys & animations)
+- Tailwind x Styled Components
+- FastAPI
+- Pydantic
+- Python
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For detailed Create React App documentation, visit [CRA Docs](https://facebook.github.io/create-react-app/docs/getting-started)
