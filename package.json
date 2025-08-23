@@ -1,4 +1,5 @@
 {
+  "homepage": "https://shiraz-v8.github.io/lifestyle-checker",
   "name": "lifestyle-checker",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +20,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "lint:js": "eslint src/**/*.{js,jsx}"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +44,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.57.1",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^3.4.17"
   }
 }

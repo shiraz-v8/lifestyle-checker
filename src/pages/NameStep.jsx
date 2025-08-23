@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Input } from "../styles/atoms/Input";
 import { PAGE_CONTENT } from "../content/page-content";
 

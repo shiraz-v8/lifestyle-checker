@@ -46,7 +46,7 @@ const StepWrapper = ({
         setCurrentStep(3);
       }, 2000);
     }
-  }, [journeyData, currentStep]);
+  }, [journeyData, currentStep, setCurrentStep, setPatient]);
 
   const isStepValid = useMemo(() => {
     switch (currentStep) {
