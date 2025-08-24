@@ -66,3 +66,20 @@ The API accepts the following data:
 | 333444555  | CARTER, Bob   | 46  | 1979-05-20 |
 | 444555666  | BOND, Charles | 70  | 1955-07-18 |
 | 555666777  | MAY, Megan    | 14  | 2011-11-14 |
+
+## Running tests
+
+Python
+
+- activate environment `source venv/bin/activate`
+- `python3 -m pytest tests/ -v`
+
+React
+
+if you have yarrn
+
+- `yarn test src/components/JourneyWizard.spec.js -u`
+
+if you have npm
+
+- `npm run test src/components/JourneyWizard.spec.js -u`
