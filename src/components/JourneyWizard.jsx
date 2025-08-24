@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ReferenceStep from "../pages/ReferenceStep";
-import NameStep from "../pages/NameStep";
-import DOBStep from "../pages/DOBStep";
 
-import Result from "../pages/Result";
 import styled from "styled-components";
-import DrinkingStep from "../pages/DrinkingStep";
-import SmokingStep from "../pages/SmokingStep";
-import ExcerciseStep from "../pages/ExcerciseStep";
-import ScoreStep from "../pages/ScoreStep";
+import {
+  DOBStep,
+  DrinkingStep,
+  ExcerciseStep,
+  NameStep,
+  ReferenceStep,
+  Result,
+  ScoreStep,
+  SmokingStep,
+  WelcomeStep,
+} from "../pages";
 import StepWrapper from "./StepWrapper";
-import WelcomeStep from "../pages/WelcomeStep";
 
 const steps = [
   WelcomeStep,

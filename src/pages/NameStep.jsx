@@ -1,5 +1,5 @@
-import { Input } from "../styles/atoms/Input";
 import { PAGE_CONTENT } from "../content/page-content";
+import { Input, Title } from "../styles";
 
 const {
   steps: { NameStep: content },
@@ -8,7 +8,7 @@ const {
 const NameStep = ({ journeyData, onDataChange }) => {
   return (
     <>
-      <h3 className="mb-6">{content.question}</h3>
+      <Title text={content.question} />
       <Input
         type="text"
         value={journeyData.surname}

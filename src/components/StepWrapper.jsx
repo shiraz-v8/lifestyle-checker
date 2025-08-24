@@ -1,8 +1,8 @@
 import React, { useCallback, useMemo, useState } from "react";
-import Button from "../styles/atoms/Button";
-import getPatient from "../api/get-patient";
-import Spinner from "../styles/atoms/Spinner";
+
 import styled from "styled-components";
+import { getPatient } from "../api";
+import { Button, Spinner, Text } from "../styles";
 
 const StepComponent = styled.div`
   min-height: 300px;
@@ -137,7 +137,7 @@ const StepWrapper = ({
         )}
       </div>
       {malformedData && (
-        <p className="text-red">Complete all the steps before proceeding.</p>
+        <Text text="Complete all the steps before proceeding." />
       )}
     </div>
   );

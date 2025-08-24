@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Text } from "../styles";
 
 const Navbar = styled.nav`
   width: 100%;
@@ -25,7 +26,7 @@ const Main = styled.main`
   height: 100vh;
 `;
 
-const PageWrapper = ({ children, title = "" }) => {
+const PageWrapper = ({ children, title = null }) => {
   return (
     <>
       <Navbar>
@@ -46,12 +47,21 @@ const PageWrapper = ({ children, title = "" }) => {
         <h2>T2 Lifestyle Checker</h2>
       </Navbar>
       <Main>
-        <h1>{title}</h1>
+        {title && <h1>{title}</h1>}
         <section>{children}</section>
       </Main>
       <Footer>
-        <p className="text-[#4a4a4a]">© 2025. All rights reserved.</p>
-        <p className="text-[#4a4a4a]">Work created by Shiraz</p>
+        <Text
+          text="© 2025. All rights reserved."
+          extras="text-[#4a4a4a] mb-3"
+        />
+        <Text text="Work created by Shiraz" extras="text-[#4a4a4a] mb-3" />
+        <a
+          extras="mb-3 text-blue-600 dark:text-blue-500 hover:underline "
+          href="https://github.com/shiraz-v8/lifestyle-checker"
+        >
+          Access the repo
+        </a>
       </Footer>
     </>
   );

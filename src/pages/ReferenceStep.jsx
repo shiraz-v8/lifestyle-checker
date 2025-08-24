@@ -1,5 +1,5 @@
 import { PAGE_CONTENT } from "../content/page-content";
-import { Input } from "../styles/atoms/Input";
+import { Input, Title } from "../styles";
 
 const {
   steps: { ReferenceStep: content },
@@ -8,7 +8,7 @@ const {
 const ReferenceStep = ({ journeyData, onDataChange }) => {
   return (
     <>
-      <h3 className="mb-6">{content.question}</h3>
+      <Title text={content.question} />
       <Input
         type="text"
         value={journeyData.ref}

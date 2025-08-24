@@ -1,4 +1,4 @@
-export const Input = ({
+const Input = ({
   type = "text",
   value,
   onChange,
@@ -42,3 +42,5 @@ export const Input = ({
     </div>
   );
 };
+
+export default Input;

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import getScore from "../api/get-score";
-import Spinner from "../styles/atoms/Spinner";
+
 import { PAGE_CONTENT } from "../content/page-content";
+import { getScore } from "../api";
+import { Spinner, Text, Title } from "../styles";
 
 const {
   steps: { ScoreStep: content },
@@ -31,15 +32,15 @@ const ScoreStep = ({ journeyData }) => {
   if (loading)
     return (
       <div className="flex flex-col items-center gap-4">
-        <h3 className="mb-6">{content.loadingText}</h3>
+        <Title text={content.loadingText} />
         <Spinner color="black" />
       </div>
     );
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <h3 className="mb-6">{content.tile}</h3>
-      <p className="mb-4"> {content.subHeading + score.score}</p>
+      <Title text={content.title} />
+      <Text text={content.subHeading + score.score} extras="mb-4" />
       <h2 className="mb-4">{score.outcome}</h2>
       {score.score <= 3 ? (
         <svg
@@ -72,7 +73,7 @@ const ScoreStep = ({ journeyData }) => {
           />
         </svg>
       )}
-      <p className="text-center">{score.message}</p>
+      <Text text={score.message} extras="text-center" />
     </div>
   );
 };

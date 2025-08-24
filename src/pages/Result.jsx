@@ -1,5 +1,5 @@
 import { PAGE_CONTENT } from "../content/page-content";
-import Button from "../styles/atoms/Button";
+import { Button, Title } from "../styles";
 
 const {
   steps: { Result: content },
@@ -9,7 +9,7 @@ const Result = ({ result, continueCTA }) => {
   const { error = false, message } = result;
   return (
     <div className="flex flex-col items-center gap-4">
-      <h3 className="mb-6">{error ? content.stop : content.proceed}</h3>
+      <Title text={error ? content.stop : content.proceed} />
       {!error ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

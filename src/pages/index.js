@@ -1,0 +1,9 @@
+export { default as WelcomeStep } from "./WelcomeStep";
+export { default as ReferenceStep } from "./ReferenceStep";
+export { default as NameStep } from "./NameStep";
+export { default as DOBStep } from "./DOBStep";
+export { default as DrinkingStep } from "./DrinkingStep";
+export { default as SmokingStep } from "./SmokingStep";
+export { default as ExcerciseStep } from "./ExcerciseStep";
+export { default as ScoreStep } from "./ScoreStep";
+export { default as Result } from "./Result";

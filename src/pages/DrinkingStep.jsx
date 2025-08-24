@@ -1,5 +1,5 @@
 import { PAGE_CONTENT } from "../content/page-content";
-import SelectableReply from "../styles/molecules/SelectableReply";
+import { SelectableReply, Title } from "../styles";
 
 const ANSWER_DATA = ["Yes", "No"];
 
@@ -10,7 +10,7 @@ const {
 const DrinkingStep = ({ journeyData, onDataChange }) => {
   return (
     <div>
-      <h3 className="mb-6">{content.question}</h3>
+      <Title text={content.question} />
       <SelectableReply
         replyArray={ANSWER_DATA}
         active={journeyData.drinking}

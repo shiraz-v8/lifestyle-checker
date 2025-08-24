@@ -1,4 +1,5 @@
 import { PAGE_CONTENT } from "../content/page-content";
+import { Title } from "../styles";
 
 const {
   steps: { WelcomeStep: content },
@@ -7,7 +8,7 @@ const {
 const WelcomeStep = () => {
   return (
     <>
-      <h3 className="mb-6">{content.heading}</h3>
+      <Title text={content.heading} />
       <p className="mb-4">{content.description}</p>
     </>
   );
